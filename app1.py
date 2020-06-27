@@ -2,7 +2,7 @@ import json
 import difflib
 from difflib import get_close_matches
 
-data = json.load(open('Section13_APP1/data.json'))
+data = json.load(open('data.json'))
 
 def translate(w):
     w = w.lower()
