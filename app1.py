@@ -8,6 +8,10 @@ def translate(w):
     w = w.lower()
     if w in data:
         return data[w]
+    elif w.title() in data:
+        return data[w.title()]
+    elif w.upper() in data: #in case user enters words like USA or NATO
+        return data[w.upper()]
     elif len(get_close_matches(w, data.keys())) > 0:
         mistake = input(f'Did you mean {get_close_matches(w, data.keys())[0]} instead? (Type Y for yes / N for no): ')
         if mistake == 'Y':
